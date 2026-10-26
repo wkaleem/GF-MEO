@@ -49,8 +49,8 @@ def render(report_path, destination):
         markersize=3,
     )
     axes[0].set(
-        title="Best feasible cost",
-        xlabel="Computation time (s)",
+        title="Solution improvement",
+        xlabel="Elapsed time (s)",
         ylabel="Operating cost",
     )
     axes[0].ticklabel_format(axis="y", style="plain", useOffset=False)
@@ -61,8 +61,8 @@ def render(report_path, destination):
     )
     axes[1].set(
         title="Commitment schedule",
-        xlabel="Period",
-        ylabel="Generator",
+        xlabel="Time period $t$",
+        ylabel="Generator $g$",
         xticks=range(online.shape[1]),
         xticklabels=range(1, online.shape[1] + 1),
         yticks=range(online.shape[0]),
@@ -83,22 +83,22 @@ def render(report_path, destination):
         positions - 0.18,
         np.maximum(before, 1e-12),
         0.36,
-        label="GENCO prediction",
+        label="Before correction",
         color="#b97930",
     )
     axes[2].bar(
         positions + 0.18,
         np.maximum(after, 1e-12),
         0.36,
-        label="Corrected output",
+        label="After correction",
         color=color,
     )
-    axes[2].axhline(1e-3, color="#444444", ls="--", lw=1, label="Tolerance")
+    axes[2].axhline(1e-3, color="#444444", ls="--", lw=1, label="Acceptance tolerance")
     axes[2].set(
         yscale="log",
-        title="Maximum AC balance residual",
+        title="Maximum power balance residuals",
         xticks=positions,
-        xticklabels=["Real (MW)", "Reactive (MVAr)"],
+        xticklabels=["Real power (MW)", "Reactive power (MVAr)"],
     )
     axes[2].legend(fontsize=8, frameon=False)
     for ax in axes:

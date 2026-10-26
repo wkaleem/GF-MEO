@@ -2,8 +2,10 @@
 
 **Grid Foundation Model–Embedded Optimization for AC-Feasible Unit Commitment**
 
-Joint optimization of commitment decisions and GENCO inputs, with local AC
-output correction and multiperiod coordination.
+This project aims to find multiperiod unit commitment decisions that satisfy
+AC power flow equations and operating limits. We embed the grid foundation
+model GENCO in the UC–ACOPF formulation with AC-feasible output correction
+and solve the resulting formulation using augmented Lagrangian dual decomposition.
 
 Open **[notebooks/ieee57_demo.ipynb](notebooks/ieee57_demo.ipynb)** and run the cells in order.
 Choose **model size** (`small` or `base`) and **seed** (`0` or `1`).

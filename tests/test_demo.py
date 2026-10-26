@@ -341,11 +341,11 @@ def test_result_plots_require_a_solution_and_show_real_report_data(
     assert view.render(report, destination)
     svg = destination.read_text()
     for text in [
-        "Best feasible cost",
+        "Solution improvement",
         "Commitment schedule",
-        "Maximum AC balance residual",
-        "GENCO prediction",
-        "Corrected output",
+        "Maximum power balance residuals",
+        "Before correction",
+        "After correction",
     ]:
         assert text in svg
     monkeypatch.setattr(sys, "argv", ["demo_view.py", str(report), str(destination)])

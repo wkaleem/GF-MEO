@@ -1,4 +1,4 @@
-"""Artifact integrity, isolated setup and solver failure reporting."""
+"""Tests for the IEEE57 GFMO example."""
 
 import hashlib
 import importlib.util
@@ -25,7 +25,7 @@ def module(name):
 
 @pytest.fixture
 def setup(tmp_path, monkeypatch):
-    value = module("setup_demo")
+    value = module("setup_environment")
     monkeypatch.setattr(value, "ROOT", tmp_path)
     return value
 
@@ -156,7 +156,7 @@ def test_prepare_matches_size_seed_and_rejects_modified_source(
         dict(path=f"case57_ieee/base/seed0/{name}")
         for name in ["config.yml", "last.pt", "normalizer_stats.pt"]
     ]
-    inventory = tmp_path / "src/genco_opf_release.json"
+    inventory = tmp_path / "src/genco_models.json"
     inventory.write_text(json.dumps(dict(records=records)))
     setup.prepare()
     setup.prepare()
@@ -186,9 +186,9 @@ def test_invalid_checkpoint_selection(setup, size, seed):
 
 @pytest.fixture
 def runner(tmp_path, monkeypatch):
-    value = module("run_demo")
+    value = module("run_example")
     monkeypatch.setattr(value, "ROOT", tmp_path)
-    (tmp_path / "demo_config.json").write_text((ROOT / "demo_config.json").read_text())
+    (tmp_path / "parameters.json").write_text((ROOT / "parameters.json").read_text())
     (tmp_path / "data").mkdir()
     (tmp_path / "data/ieee57_uc.json").write_text("{}")
     monkeypatch.setenv("GFMO_DEMO_PROGRESS_FILE", str(tmp_path / "progress.json"))
@@ -215,22 +215,22 @@ def test_execution_failure_is_not_reported_as_infeasibility(
 ):
     launch(runner, monkeypatch, report, returncode)
     with pytest.raises(RuntimeError):
-        runner.run_demo()
+        runner.run_example()
     folder = Path(json.loads((runner.ROOT / "latest_run.json").read_text())["folder"])
     assert json.loads((folder / "summary.json").read_text())["accepted"] is False
 
 
 def test_time_limit_without_solution_is_explicit(runner, monkeypatch):
     launch(runner, monkeypatch, timeout=True)
-    result = runner.run_demo()
+    result = runner.run_example()
     assert result["process_timeout"] and not result["accepted"]
     assert result["first_feasible_s"] is None
 
 
 def test_no_incumbent_and_repeated_runs_remain_separate(runner, monkeypatch):
     launch(runner, monkeypatch, {"status": "no_acceptable_full_solution_found"})
-    first = runner.run_demo()
-    second = runner.run_demo()
+    first = runner.run_example()
+    second = runner.run_example()
     assert not first["accepted"] and first["run_directory"] != second["run_directory"]
 
 
@@ -259,9 +259,9 @@ def test_saved_witness_is_independently_checked(runner, monkeypatch):
         seen.append(witness)
         return dict(accepted=True)
 
-    monkeypatch.setitem(sys.modules, "literal_check", SimpleNamespace(check=check))
+    monkeypatch.setitem(sys.modules, "feasibility", SimpleNamespace(check=check))
     launch(runner, monkeypatch, report)
-    result = runner.run_demo()
+    result = runner.run_example()
     assert result["accepted"] and len(seen) == 1
     assert (
         json.loads((Path(result["run_directory"]) / "witness.json").read_text())
@@ -274,12 +274,12 @@ def test_changed_case_is_rejected(runner, monkeypatch):
     report["case_sha256"] = "wrong"
     monkeypatch.setitem(
         sys.modules,
-        "literal_check",
+        "feasibility",
         SimpleNamespace(check=lambda *a: pytest.fail("Changed case")),
     )
     launch(runner, monkeypatch, report)
     with pytest.raises(ValueError, match="Case changed"):
-        runner.run_demo()
+        runner.run_example()
 
 
 @pytest.mark.parametrize(
@@ -295,30 +295,30 @@ def test_changed_case_is_rejected(runner, monkeypatch):
 )
 def test_invalid_run_arguments(runner, args):
     with pytest.raises(ValueError):
-        runner.run_demo(**args)
+        runner.run_example(**args)
 
 
 @pytest.mark.parametrize(
     "script,args",
-    [("run_demo.py", ["--seconds", "0"]), ("setup_demo.py", ["--seed", "2"])],
+    [("run_example.py", ["--seconds", "0"]), ("setup_environment.py", ["--seed", "2"])],
 )
 def test_command_line_rejects_invalid_inputs_before_work(script, args, monkeypatch):
     monkeypatch.setattr(sys, "argv", [script] + args)
-    with pytest.raises(ValueError if script == "run_demo.py" else SystemExit):
+    with pytest.raises(ValueError if script == "run_example.py" else SystemExit):
         runpy.run_path(str(ROOT / script), run_name="__main__")
 
 
 def test_command_line_without_notebook_marker(runner, monkeypatch):
     monkeypatch.delenv("GFMO_DEMO_PROGRESS_FILE")
     launch(runner, monkeypatch, {"status": "no_acceptable_full_solution_found"})
-    assert not runner.run_demo()["accepted"]
+    assert not runner.run_example()["accepted"]
 
 
 def test_result_plots_require_a_solution_and_show_real_report_data(
     tmp_path, monkeypatch
 ):
     monkeypatch.setenv("MPLCONFIGDIR", str(tmp_path / "mpl"))
-    view = module("demo_view")
+    view = module("plot_results")
     report = tmp_path / "report.json"
     destination = tmp_path / "result.svg"
     report.write_text('{"best":null}')
@@ -348,5 +348,5 @@ def test_result_plots_require_a_solution_and_show_real_report_data(
         "After correction",
     ]:
         assert text in svg
-    monkeypatch.setattr(sys, "argv", ["demo_view.py", str(report), str(destination)])
-    runpy.run_path(str(ROOT / "demo_view.py"), run_name="__main__")
+    monkeypatch.setattr(sys, "argv", ["plot_results.py", str(report), str(destination)])
+    runpy.run_path(str(ROOT / "plot_results.py"), run_name="__main__")

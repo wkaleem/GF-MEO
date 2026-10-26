@@ -1,8 +1,4 @@
-"""Independent, standard-library checker for the literal manuscript model.
-
-Branch flows are recomputed from complex voltages and pi-circuit parameters.
-Powers are in MW/MVAr and angles in radians. No solver dependency is required.
-"""
+"""UC–ACOPF feasibility checks from generation and bus voltages."""
 
 import cmath
 import math
@@ -97,7 +93,7 @@ def check(
             outgoing[i] += sf
             outgoing[j] += st
             if line["rate_a"] <= 0:
-                raise ValueError("Literal pilot requires positive active-line ratings")
+                raise ValueError("Active-line ratings must be positive")
             violation(
                 "line_mva", max(abs(sf), abs(st)) - line["rate_a"], power_tolerance
             )
@@ -218,5 +214,5 @@ def check(
         tolerances=dict(
             power=power_tolerance, voltage=voltage_tolerance, angle=angle_tolerance
         ),
-        specification="literal manuscript with physical polar voltage products; initial Pg ramps enforced",
+        specification="UC–ACOPF constraints with initial dispatch ramps",
     )

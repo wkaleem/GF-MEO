@@ -1,8 +1,4 @@
-"""GENCO inputs, inference derivatives and independent period checks.
-
-The corrected period solver composes this predictor with the AC projection.
-Input coordinates change neural conditioning, not the original network data.
-"""
+"""GENCO evaluation, derivatives and period feasibility checks."""
 
 from __future__ import annotations
 import copy
@@ -12,11 +8,11 @@ from pathlib import Path
 import time
 import numpy as np
 import torch
-from opf_virtual_adapter import FrozenVirtualOPF, signed_log_cost
-from opf_adapter import EDGE
+from model_inputs import FrozenVirtualOPF, signed_log_cost
+from genco_model import EDGE
 from gridfm_graphkit.datasets.globals import C0_H, C2_H
-from torch_ac import TorchAC
-from physical_check import check_solution, ac_quantities
+from ac_derivatives import TorchAC
+from ac_constraints import check_solution, ac_quantities
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -69,21 +65,17 @@ class PeriodOracle:
         self.physics = TorchAC(case)
         if convention == "literal_period":
             if bool((self.physics.pmin < 0).any()):
-                raise ValueError(
-                    "Literal-period pilot requires nonnegative original Pmin"
-                )
+                raise ValueError("Minimum real power generation must be nonnegative")
             if not bool(
                 torch.isfinite(self.physics.rate).all()
                 and (self.physics.rate > 0).all()
             ):
-                raise ValueError(
-                    "Literal-period pilot requires finite positive active line limits"
-                )
+                raise ValueError("Active-line limits must be finite and positive")
         self.prepared = self.adapter.prepare(t, u)
         lo, hi = self.adapter.bounds(t)
-        # The legacy cost interpolation is FIXED at zero, never optimized.
+        # Cost interpolation is fixed at zero.
         lo[-1] = hi[-1] = 0.0
-        self.legacy_dimension = len(lo)
+        self.network_input_dimension = len(lo)
         self.cost_generators = torch.as_tensor(
             self.adapter.adapter.eligible, dtype=torch.long
         )
@@ -130,11 +122,14 @@ class PeriodOracle:
         )
         if self.optimize_linear_costs:
             inputs = self.adapter.virtual_features(
-                self.t, self.u, x[: self.legacy_dimension], prepared=self.prepared
+                self.t,
+                self.u,
+                x[: self.network_input_dimension],
+                prepared=self.prepared,
             )
             costs = self.adapter.cost_original.clone()
             new_linear = costs[:, 1].index_copy(
-                0, self.cost_generators, x[self.legacy_dimension :]
+                0, self.cost_generators, x[self.network_input_dimension :]
             )
             costs = torch.stack((costs[:, 0], new_linear, costs[:, 2]), dim=1)
             gen = inputs["x_dict"]["gen"].clone()
@@ -189,7 +184,7 @@ class PeriodOracle:
         if not tensor.numel():
             return np.zeros((len(value), 0))
         if self.jacobian_mode == "rowwise":
-            # Retained as an independently evaluated derivative reference.
+            # Differentiate each constraint separately.
             rows = []
             for v in value:
                 check_deadline()
@@ -312,7 +307,7 @@ class PeriodOracle:
                 and angle_domain
                 and atan_error <= 1e-6
             ),
-            physical_check=checked,
+            ac_constraints=checked,
             exact_binary=exact_binary,
             input_bound_violation=bound_error,
             principal_atan_residual=atan_error,

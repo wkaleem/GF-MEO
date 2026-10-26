@@ -1,10 +1,4 @@
-"""Sum-preserving allocation of a predicted bus reactive total to online units.
-
-This is an adapter convention, not additional outputs of the released model.
-For positive total capacity width, allocation is affine between summed lower
-and upper bounds. Zero-width buses split any mismatch equally; the mismatch is
-preserved for physical checking/correction, never silently clipped.
-"""
+"""Allocation of bus reactive generation among online generators."""
 
 import numpy as np
 

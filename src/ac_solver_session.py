@@ -1,8 +1,4 @@
-"""Checkpoint-free AC period solves through the published JuMP/Ipopt model.
-
-The parent owns a monotonic deadline and independently checks physical points.
-This module does not certify temporal UC feasibility or provide a lower bound.
-"""
+"""AC subproblem solves with a common time limit."""
 
 from __future__ import annotations
 
@@ -18,8 +14,8 @@ import subprocess
 import time
 
 import numpy as np
-from literal_check import check as check_literal, finite_data
-from manuscript_period import period_objective
+from feasibility import check as check_literal, finite_data
+from lagrangian import period_objective
 
 ROOT = Path(__file__).resolve().parents[1]
 PREFIX = b"@direct_ac@"
@@ -380,7 +376,7 @@ class DirectPeriodOracle:
         )
         return dict(
             accepted_period=bool(checked["accepted"] and excess <= 1e-6),
-            physical_check=checked,
+            ac_constraints=checked,
             principal_angle_margin_violation=float(excess),
             scope="physical period constraints only; no temporal UC claim",
         )

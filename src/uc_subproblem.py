@@ -1,14 +1,11 @@
-"""UC horizon constraints, generation costs and dispatch consensus.
-
-Interface powers are in per unit on the network base; costs are unscaled.
-"""
+"""UC subproblem with commitment, duration and ramp constraints."""
 
 from __future__ import annotations
 import time
 import numpy as np
 from pyscipopt import Model, quicksum
 
-SPEC = "manuscript_20261024_literal_uc_and_initial_dispatch_ramps"
+SPEC = "UC horizon with initial dispatch ramps"
 
 
 def arrays(case):
@@ -103,7 +100,7 @@ def check_horizon(case, solution, tolerance=1e-5):
         initial.extend(u[: int(a["initial_forced_off"][g]), g])
         U, D = int(a["min_up"][g]), int(a["min_down"][g])
         if U < 1 or D < 1:
-            raise ValueError("Pilot requires positive minimum durations")
+            raise ValueError("Minimum up and down times must be positive")
         for t in range(U - 1, T):
             up.append(su[t - U + 1 : t + 1, g].sum() - u[t, g])
         for t in range(D - 1, T):
@@ -186,7 +183,7 @@ def solve_horizon(
             raise ValueError("Invalid completion data")
     if fixed_u is not None and not np.isin(fixed_u, [0, 1]).all():
         raise ValueError("Nonbinary completion pattern")
-    model = Model("manuscript UC horizon")
+    model = Model("UC subproblem")
     model.hideOutput()
     model.setRealParam("limits/time", time_limit)
     model.setRealParam("numerics/feastol", 1e-8)

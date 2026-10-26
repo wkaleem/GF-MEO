@@ -1,8 +1,4 @@
-"""Trained GENCO OPF with source-faithful discrete status/cost inputs.
-
-No dispatch control is inserted into masked Pg/Vm features. Native engineering
-bounds and actual costs are preserved; virtual cost permutations are separate.
-"""
+"""GENCO model loading, network inputs and inference."""
 
 from __future__ import annotations
 
@@ -38,16 +34,16 @@ from gridfm_graphkit.datasets.task_transforms import OptimalPowerFlowTransforms
 from gridfm_graphkit.datasets.globals import VM_OUT, VA_OUT, QG_OUT, RATE_A
 
 try:
-    from .opf_networks import network_spec, nominal_status, nominal_equipment
-    from .reactive_allocation import allocation_coefficients
+    from .networks import network_spec, nominal_status, nominal_equipment
+    from .reactive_generation import allocation_coefficients
 except ImportError:
-    from opf_networks import network_spec, nominal_status, nominal_equipment
-    from reactive_allocation import allocation_coefficients
+    from networks import network_spec, nominal_status, nominal_equipment
+    from reactive_generation import allocation_coefficients
 
 try:
-    from .physical_check import ac_quantities, check_solution
+    from .ac_constraints import ac_quantities, check_solution
 except ImportError:
-    from physical_check import ac_quantities, check_solution
+    from ac_constraints import ac_quantities, check_solution
 
 
 EDGE = ("bus", "connects", "bus")
@@ -71,9 +67,7 @@ def checkpoint_files(network, model_size, training_seed, checkpoint_root=None):
         or training_seed not in (0, 1)
     ):
         raise ValueError("Unknown released OPF network, model size or training seed")
-    inventory = json.loads(
-        Path(__file__).with_name("genco_opf_release.json").read_text()
-    )
+    inventory = json.loads(Path(__file__).with_name("genco_models.json").read_text())
     if (
         inventory["repository"] != "gridfm/genco-opf-datakit"
         or inventory["revision"] != "2d2401572f6a2d0c1be79841b2def99cf45e1639"
@@ -553,7 +547,7 @@ class FrozenOPF:
                         not p.requires_grad for p in self.model.parameters()
                     ),
                     "actual_cost_convention": "Unconditional original c0; generation coefficients preserve the source order",
-                    "reactive_allocation": "Online capacity-width affine allocation of bus totals; equal-share mismatch when total width is zero; no clipping",
+                    "reactive_generation": "Online capacity-width affine allocation of bus totals; equal-share mismatch when total width is zero; no clipping",
                     "official_q_limit_aggregation_includes_offline_rows": True,
                     "model_rating_vs_raw_max_error_mva": float(
                         np.max(

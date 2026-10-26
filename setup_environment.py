@@ -1,4 +1,4 @@
-"""Download the exact public software and model artifacts used by the demo."""
+"""CPU environment and GENCO model setup."""
 
 import argparse
 import hashlib
@@ -155,7 +155,7 @@ def prepare(size="base", seed=0):
         sha256="50da73ecb09c02d77f73eaf2f3ad41dfa77a1ec10f85ef4cb07e2f683d42e842",
     )
     download(nominal, ROOT / "sources/distribution_audit/case57_nominal_repro.m")
-    inventory = json.loads((ROOT / "src/genco_opf_release.json").read_text())
+    inventory = json.loads((ROOT / "src/genco_models.json").read_text())
     selection = f"case57_ieee/{size}/seed{seed}/"
     records = [r for r in inventory["records"] if r["path"].startswith(selection)]
     if len(records) != 3:

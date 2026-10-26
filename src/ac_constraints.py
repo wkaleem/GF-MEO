@@ -1,9 +1,4 @@
-"""Independent physical/UC checks from raw equipment parameters.
-
-No GENCO, GraphKit, solver physics helpers, or precomputed branch admittances are
-used. Powers are MW/Mvar, solution angles radians, raw branch shifts/limits degrees.
-Raw bus GS/BS use the original 100-MVA base unless shunt_baseMVA is specified.
-"""
+"""AC power flow equations and operating limits."""
 
 from __future__ import annotations
 
@@ -118,8 +113,8 @@ def check_solution(
     """Check the declared original AC+UC constraints; return physical residuals.
 
     Malformed/nonfinite solutions raise ValueError, never pass by NaN comparison.
-    Cases with pre-horizon dispatch ramps are rejected; literal_check evaluates
-    the complete demonstration schedule. Generator constant costs are reported
+    Cases with pre-horizon dispatch ramps are checked by feasibility.py.
+    Generator constant costs are reported
     with and without commitment scaling. Minimum durations are truncated at
     the horizon.
     """

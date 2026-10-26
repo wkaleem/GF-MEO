@@ -1,4 +1,4 @@
-"""Shared augmented-Lagrangian objectives for horizon and period solves."""
+"""Augmented Lagrangian objectives for the UC and AC subproblems."""
 
 import numpy as np
 

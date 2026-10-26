@@ -1,8 +1,4 @@
-"""Differentiable original-network constraints for frozen-image optimization.
-
-The final feasibility certificate remains physical_check.py. This module never
-reads the neural network's virtual demands, costs or branch admittances.
-"""
+"""AC residuals and derivatives for GENCO input optimization."""
 
 from __future__ import annotations
 import copy
@@ -95,7 +91,7 @@ class TorchAC:
 
         All constraints use the original physical case. Full P/Q balance is
         retained even if a model decoder enforces some rows for virtual inputs.
-        This is a static block; the separate integer master enforces UC/ramping.
+        The UC subproblem enforces commitment logic and ramp constraints.
         """
         pg, qg, vm, va, u = (state[k] for k in ("pg", "qg", "vm", "va", "uc"))
         quantities = self.quantities(vm, va)

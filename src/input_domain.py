@@ -1,8 +1,4 @@
-"""Instance-dependent virtual-load boxes inside prescribed generator ranges.
-
-Ranges come from the selected checkpoint's data-generation record. This is a
-factor-domain envelope, not a guarantee of joint training support or accuracy.
-"""
+"""Bounds on demand inputs from the GENCO data-generation ranges."""
 
 import numpy as np
 

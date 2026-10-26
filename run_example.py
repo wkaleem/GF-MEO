@@ -1,4 +1,4 @@
-"""Run the actual corrected GFMO coordinator and check its complete schedule."""
+"""Solve the IEEE57 example and check the UC–ACOPF schedule."""
 
 import argparse
 from datetime import datetime, timezone
@@ -14,7 +14,7 @@ import uuid
 ROOT = Path(__file__).resolve().parent
 
 
-def run_demo(size="base", seed=0, seconds=300):
+def run_example(size="base", seed=0, seconds=300):
     if size not in ("small", "base") or type(seed) is not int or seed not in (0, 1):
         raise ValueError("Invalid model configuration")
     if not isinstance(seconds, (int, float)) or not 0 < seconds <= 3600:
@@ -29,7 +29,7 @@ def run_demo(size="base", seed=0, seconds=300):
         )
     )
     folder.mkdir(parents=True)
-    config = json.loads((ROOT / "demo_config.json").read_text())
+    config = json.loads((ROOT / "parameters.json").read_text())
     config.update(
         model_size=size,
         training_seed=seed,
@@ -69,7 +69,7 @@ def run_demo(size="base", seed=0, seconds=300):
                 [
                     sys.executable,
                     "-B",
-                    "src/manuscript_decomposition.py",
+                    "src/decomposition.py",
                     "--config",
                     str(config_path),
                 ],
@@ -102,7 +102,7 @@ def run_demo(size="base", seed=0, seconds=300):
     best = report.get("best")
     if best is not None:
         sys.path.insert(0, str(ROOT / "src"))
-        from literal_check import check
+        from feasibility import check
 
         case_path = ROOT / config["case"]
         if hashlib.sha256(case_path.read_bytes()).hexdigest() != report["case_sha256"]:
@@ -118,7 +118,7 @@ def run_demo(size="base", seed=0, seconds=300):
         checked = check(case, witness)
         summary.update(
             accepted=checked["accepted"],
-            physical_check=checked,
+            ac_constraints=checked,
             objective=best["objective"],
             accepted_at_s=best["accepted_at_s"],
         )
@@ -145,4 +145,4 @@ if __name__ == "__main__":
     parser.add_argument("--seed", type=int, choices=(0, 1), default=0)
     parser.add_argument("--seconds", type=float, default=300)
     args = parser.parse_args()
-    run_demo(args.size, args.seed, args.seconds)
+    run_example(args.size, args.seed, args.seconds)

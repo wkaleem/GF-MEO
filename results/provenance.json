@@ -1,0 +1,27 @@
+{
+  "case_sha256": "c72b57b716e4832661fce239ce658f5dc736db0421abb5654049ad4dfd2b44be",
+  "source_files": {
+    "model_inputs.py": "5113efe050c2a592ae5c88f0c7bef4033793562985cdb16264333be5f1f65e02",
+    "reactive_generation.py": "38e76eb3b31f1ed7163c30b00401ac02187e680e1b3c10075a8c45c65f4f8518",
+    "ac_solver_session.py": "66464400d7a54d27018ef69849e8493cda73312470eb5dc875ac530cac350e98",
+    "ac_solver.py": "d304e247acebd66bd7648fef9874c3c5df9fb821f2df5381e21c4bd0734b1456",
+    "input_domain.py": "37309685794cfc9d52f89e42079b470267fc6a3eba8de1afb97983e3f5862eb1",
+    "networks.py": "785791af3fbc1f74ce155f58ade3e760238f70d881578e6213ef43cc75037709",
+    "ac_derivatives.py": "d6ed227c34178443bbdc86c634fe7ff75eaf0d8cb14c2ad2f2de241cec8746df",
+    "ac_correction.py": "c26c887931af6573fc7a2c71aeb7fccc9a8555b60eb4ed2d18b52f33a44a3002",
+    "lagrangian.py": "6540514385e6073f503ed50cf2ca6268c7b877c2cac60081bdf38ef455c6317d",
+    "model_evaluation.py": "f85502c6c57c5cc249ddab0f487446f9c783943f2722e54941e004955e4695d2",
+    "ac_subproblem.py": "0f63f92681b0cf7340e3a45bf0ab8a3433de7ea63bbf9a19ed357bcbdcd2b83c",
+    "uc_subproblem.py": "982424511cc27c9da22895fe34743cd4dafbd4ab9dd3344aff5ac02b6c63b988",
+    "feasibility.py": "b60e666de9b46436ffbf653f1a7dfbae3e56e2709ee353a8210c34313a1f5b12",
+    "genco_model.py": "0355393a1b06ca39865bfe70d69236c1ab5b1e1b67e47bb9856c2cc393de309c",
+    "decomposition.py": "9c904aab9dff183c2deef96bcf6eb5cbe085d0344d4235090d4e0b9601226ca6",
+    "ac_constraints.py": "982a1ad87875d177c1f3cd39f215a9c7d659a29219e1387dd8ad1dd7219d9d2d"
+  },
+  "tests": {
+    "passed": 947,
+    "combined_coverage": 99.22351636161952,
+    "branch_coverage": 98.3739837398374,
+    "exclusions": 0
+  }
+}

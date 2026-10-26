@@ -1,9 +1,4 @@
-"""Corrected-output period model, distinct from strict neural-image embedding.
-
-Each evaluation starts its physical correction at the raw neural prediction
-with an empty active set. The physical instance and correction metric are
-fixed. A scalar implicit adjoint avoids a full neural constraint Jacobian.
-"""
+"""GENCO predictions, AC correction and implicit derivatives for each period."""
 
 import hashlib
 import json
@@ -13,9 +8,9 @@ import numpy as np
 import torch
 from scipy.sparse.linalg import splu
 
-from period_oracle import PeriodOracle
-from physical_projection import SparseProjection, build_problem
-from manuscript_period import period_objective
+from model_evaluation import PeriodOracle
+from ac_correction import SparseProjection, build_problem
+from lagrangian import period_objective
 
 
 class CorrectionFailure(FloatingPointError):

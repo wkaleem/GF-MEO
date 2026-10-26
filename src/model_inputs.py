@@ -1,15 +1,7 @@
-"""Auxiliary input variables for the released GENCO OPF models.
+"""Demand, impedance and generation-cost inputs for GENCO.
 
-The actual case is immutable. Virtual demand, impedance and cost coefficients
-are neural inputs only. Use TorchAC/physical_check with the original case to
-assess physical feasibility. Interior cost mixtures are outside the released
-discrete cost-permutation sampler, even if load/impedance boxes are respected.
-
-Variable features are recomputed in float64 before the trained float64 model.
-This is a disclosed precision change from official float32 preprocessing, not
-a change to the checkpoint weights. Zero offsets reproduce the same raw inputs
-but may differ slightly from the original rounded features and predictions.
-"""
+Features and inference use float64. The released weights and original
+physical instance remain unchanged."""
 
 from __future__ import annotations
 import copy
@@ -20,7 +12,7 @@ import numpy as np
 import torch
 from torch_geometric.data import Batch
 
-from opf_adapter import FrozenOPF, EDGE, COST_COLUMNS, ROOT
+from genco_model import FrozenOPF, EDGE, COST_COLUMNS, ROOT
 from input_domain import virtual_load_box
 from gridfm_graphkit.datasets.globals import (
     PD_H,
@@ -93,7 +85,7 @@ class FrozenVirtualOPF:
     buses. Impedance coordinates list active nonzero r then active nonzero x.
     Zero-valued fields and offline branches remain unchanged. Lambda=0 uses the
     original cost rows; lambda=1 reverses the eligible row order. Intermediate
-    lambda mixes RAW coefficients before signed-log normalization.
+    lambda mixes cost coefficients before signed-log normalization.
 
     bounds(t) defines local fractional boxes. Impedance boxes intersect the
     nominal +/-20% generator range. Load boxes use one admissible common global
@@ -440,7 +432,7 @@ class FrozenVirtualOPF:
 
         parameters is an N-by-n_parameters float64 CPU tensor. The returned
         list has one physical-unit state dict per request, in the same order.
-        Both node features AND directed admittance features vary independently
+        Node features and directed admittance features vary independently
         per graph; the cached union contains only fixed topology/masks/features.
         """
         item = self.prepare_batch(requests) if prepared is None else prepared

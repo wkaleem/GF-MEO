@@ -1,7 +1,4 @@
-"""Pinned GENCO network metadata.
-
-Cases without network identity default to IEEE14.
-"""
+"""Network data for the released GENCO models."""
 
 from dataclasses import dataclass
 from pathlib import Path

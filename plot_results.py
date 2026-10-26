@@ -1,4 +1,4 @@
-"""Cost, commitment and AC balance plots from the current solve."""
+"""Operating cost, commitment schedule and power balance residuals."""
 
 import argparse
 import json
@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
-from literal_check import check
+from feasibility import check
 
 
 def residuals(case, best):

@@ -21,8 +21,7 @@
       ],
       "report_sha256": "cc5b95865ba15d4219b8f8c9c82941e2e18b36c26817b17fd6072bddc61d91f2",
       "case_sha256": "a08d721d65bcd1ecadb995cf41c8e55c0e0b56c729e790d96196c96d9891ec4c",
-      "archive_sha256": "57c4c5a3683d97647c2ba4a40ab703a6cd07397d103f92e1e4569947f74953ba",
-      "coverage_gate_source_note": "Historical benchmark producer; current notebook uses the validated current coordinator with identical corrected-method semantics."
+      "archive_sha256": "57c4c5a3683d97647c2ba4a40ab703a6cd07397d103f92e1e4569947f74953ba"
     },
     {
       "model_size": "small",
@@ -37,8 +36,7 @@
       ],
       "report_sha256": "51b44b001bc2104f3a41e72c47108f147e700e8b308c75d56bf3ef541ee06950",
       "case_sha256": "a08d721d65bcd1ecadb995cf41c8e55c0e0b56c729e790d96196c96d9891ec4c",
-      "archive_sha256": "0d7060e3ab7d6dd665a18a4b6867d93e75d15e36a1fc0ea6e5307434f93f8fa1",
-      "coverage_gate_source_note": "Historical benchmark producer; current notebook uses the validated current coordinator with identical corrected-method semantics."
+      "archive_sha256": "0d7060e3ab7d6dd665a18a4b6867d93e75d15e36a1fc0ea6e5307434f93f8fa1"
     },
     {
       "model_size": "base",
@@ -53,8 +51,7 @@
       ],
       "report_sha256": "25c7c5b2a4561516ca6354219adda7ac9f1f601ebf643b285dda81e854a603cb",
       "case_sha256": "a08d721d65bcd1ecadb995cf41c8e55c0e0b56c729e790d96196c96d9891ec4c",
-      "archive_sha256": "ca5589d7e2ae6f5c98bc3957ce2a9354b31148f12d64cbe7712c26e2da6019b0",
-      "coverage_gate_source_note": "Historical benchmark producer; current notebook uses the validated current coordinator with identical corrected-method semantics."
+      "archive_sha256": "ca5589d7e2ae6f5c98bc3957ce2a9354b31148f12d64cbe7712c26e2da6019b0"
     },
     {
       "model_size": "base",
@@ -69,8 +66,7 @@
       ],
       "report_sha256": "4e9f9625ce4c0afbb66b746dc89b30806525079b7cbb3ad1035138bed1541afc",
       "case_sha256": "a08d721d65bcd1ecadb995cf41c8e55c0e0b56c729e790d96196c96d9891ec4c",
-      "archive_sha256": "03f95379cc3f10fd980a3575f4e088a23f3f4014a18690b0ddc699241e50dd1d",
-      "coverage_gate_source_note": "Historical benchmark producer; current notebook uses the validated current coordinator with identical corrected-method semantics."
+      "archive_sha256": "03f95379cc3f10fd980a3575f4e088a23f3f4014a18690b0ddc699241e50dd1d"
     }
   ]
 }

@@ -1,11 +1,4 @@
-"""Sparse original-AC output correction for the corrected-predictor variant.
-
-The distance metric is identity on per-unit powers,
-per-unit voltage magnitudes, and radian angles. Raw prediction and empty active
-set determine each local solve; there is no global projection guarantee.
-Compilation and individual library calls are atomic; deadline checks occur
-between calls, and late results cannot be accepted.
-"""
+"""Local AC correction through sparse KKT equations."""
 
 import math
 import time
@@ -181,12 +174,7 @@ class SparseProjection:
         max_changes=20,
         require_inactive_margin=True,
     ):
-        """Local KKT correction; an absent update cap requires a finite deadline.
-
-        An explicit cap is retained for reproducible diagnostics. It counts
-        active-set updates, including the final resulting system's evaluation.
-        The timed coordinator passes None so the cap does not depend on size.
-        """
+        """Compute a local KKT point within the update or time limit."""
         if max_changes is None:
             if not np.isfinite(self.deadline):
                 raise ValueError("Uncapped correction requires a finite deadline")
@@ -256,8 +244,7 @@ class SparseProjection:
                 history.append({"add": index})
                 active = np.sort(np.r_[active, index])
             else:
-                # Dense rank/curvature checks are deliberate diagnostic checks,
-                # outside the sparse Newton iterations, and included in timing.
+                # Check constraint rank and curvature before implicit differentiation.
                 singular = np.linalg.svd(J.toarray(), compute_uv=False)
                 self.check_deadline()
                 tangent = null_space(J.toarray())

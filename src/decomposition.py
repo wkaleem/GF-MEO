@@ -1,8 +1,4 @@
-"""UC–ACOPF decomposition coordinator.
-
-Alternating horizon/period solves, corrected-dispatch consensus, adaptive
-penalties and independently checked UC completion run under a common deadline.
-"""
+"""Augmented Lagrangian decomposition for UC–ACOPF."""
 
 from __future__ import annotations
 import time
@@ -16,34 +12,34 @@ from pathlib import Path
 from contextlib import ExitStack
 import sys
 import numpy as np
-from manuscript_horizon import arrays, check_horizon, economic_cost, solve_horizon
-from manuscript_period import period_objective, horizon_objective
-from opf_networks import network_spec
-from direct_backend import DirectPeriodBackend
-from direct_period import solve_direct_period, WorkerError
-from literal_check import check as check_full_solution
+from uc_subproblem import arrays, check_horizon, economic_cost, solve_horizon
+from lagrangian import period_objective, horizon_objective
+from networks import network_spec
+from ac_solver import DirectPeriodBackend
+from ac_solver_session import solve_direct_period, WorkerError
+from feasibility import check as check_full_solution
 
 
 def load_opf_bundle(**kwargs):
-    from opf_adapter import load_opf_bundle as load
+    from genco_model import load_opf_bundle as load
 
     return load(**kwargs)
 
 
 def checkpoint_files(*args, **kwargs):
-    from opf_adapter import checkpoint_files as files
+    from genco_model import checkpoint_files as files
 
     return files(*args, **kwargs)
 
 
 def CorrectedPeriodOracle(*args, **kwargs):
-    from corrected_period import CorrectedPeriodOracle as oracle
+    from ac_subproblem import CorrectedPeriodOracle as oracle
 
     return oracle(*args, **kwargs)
 
 
 def solve_corrected_period(*args, **kwargs):
-    from corrected_period import solve_corrected_period as solve
+    from ac_subproblem import solve_corrected_period as solve
 
     return solve(*args, **kwargs)
 
@@ -164,7 +160,7 @@ def validate_penalty_policy(policy, rho):
 
 
 def next_penalty(rho, previous_residual, residual, tolerance, policy):
-    """Choose the NEXT sweep's coefficient; never change unscaled multipliers."""
+    """Update the penalty for the next iteration."""
     if policy is None:
         return rho, "fixed"
     if (
@@ -193,7 +189,7 @@ def patterns(case):
         [g for g in range(G) if g not in fixed and g not in fixed_off], dtype=int
     )
     if len(free) > 12:
-        raise ValueError("Development enumerator limited to 12 switchable units")
+        raise ValueError("At most 12 switchable generators are supported")
     result = []
     for bits in itertools.product((0.0, 1.0), repeat=len(free)):
         u = np.ones(G)
@@ -328,7 +324,7 @@ def complete(case, oracles, periods, time_limit):
         period_checks=checks,
         reconstruction_checks=reconstructions,
         full_check=full_check,
-        acceptance="literal manuscript constraints to recorded tolerances; exact UC binaries",
+        acceptance="UC–ACOPF constraints at the stated tolerances; exact binary decisions",
         global_lower_bound=None,
         certified_gap=None,
     )
@@ -449,7 +445,7 @@ def _run(config, *, started, resources):
         failures=[],
         input_domains=[],
         initial_inputs=[],
-        scope="development integration run",
+        scope="GFMO UC–ACOPF solve",
         global_lower_bound=None,
         certified_gap=None,
         termination_reason=None,
@@ -497,14 +493,14 @@ def _run(config, *, started, resources):
         artifacts = [
             Path(__file__).with_name(name)
             for name in (
-                "manuscript_decomposition.py",
-                "manuscript_horizon.py",
-                "manuscript_period.py",
-                "direct_backend.py",
-                "direct_period.py",
-                "opf_networks.py",
-                "literal_check.py",
-                "physical_check.py",
+                "decomposition.py",
+                "uc_subproblem.py",
+                "lagrangian.py",
+                "ac_solver.py",
+                "ac_solver_session.py",
+                "networks.py",
+                "feasibility.py",
+                "ac_constraints.py",
             )
         ]
         artifacts.append(root / spec.nominal_path)
@@ -522,28 +518,28 @@ def _run(config, *, started, resources):
         artifacts += [
             Path(__file__).with_name(name)
             for name in (
-                "manuscript_decomposition.py",
-                "manuscript_horizon.py",
-                "manuscript_period.py",
-                "period_oracle.py",
-                "opf_adapter.py",
-                "opf_virtual_adapter.py",
-                "physical_check.py",
-                "torch_ac.py",
+                "decomposition.py",
+                "uc_subproblem.py",
+                "lagrangian.py",
+                "model_evaluation.py",
+                "genco_model.py",
+                "model_inputs.py",
+                "ac_constraints.py",
+                "ac_derivatives.py",
                 "input_domain.py",
-                "genco_opf_release.json",
-                "opf_networks.py",
-                "literal_check.py",
-                "reactive_allocation.py",
+                "genco_models.json",
+                "networks.py",
+                "feasibility.py",
+                "reactive_generation.py",
             )
         ]
         artifacts += [
             Path(__file__).with_name(name)
             for name in (
-                "corrected_period.py",
-                "physical_projection.py",
-                "direct_backend.py",
-                "direct_period.py",
+                "ac_subproblem.py",
+                "ac_correction.py",
+                "ac_solver.py",
+                "ac_solver_session.py",
             )
         ]
     report["artifacts"] = {
@@ -633,7 +629,7 @@ def _run(config, *, started, resources):
         enumerated=all_patterns,
         initial_obligations="Full-horizon online/offline obligations fix the corresponding period indicators.",
         released_adapter_restrictions=f"Reference generators online; one to {spec.maximum_outages} sampled generator/line outages beyond native offline equipment; connected {spec.display} network.",
-        scope="Restricted development instance; not all patterns or networks of the generic formulation.",
+        scope="Commitment patterns satisfy fixed-unit and equipment-availability restrictions.",
     )
     oracle_table = {}
     available = {}
@@ -804,7 +800,7 @@ def _run(config, *, started, resources):
         )
         next_selected = []
         for t in range(T):
-            # Always retain the preceding period iterate under the NEW objective.
+            # Reevaluate the preceding period iterate under the current objective.
             choices = [selected[t]]
             for u in all_patterns:
                 budget = remaining(config["period_seconds"])

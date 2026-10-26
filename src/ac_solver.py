@@ -1,8 +1,4 @@
-"""Physical-period control for the shared UC/AC coordinator.
-
-The discrete domain matches the released adapter. Physical variables, rather
-than model inputs, are optimized; no checkpoint or prediction is loaded here.
-"""
+"""AC subproblem interface for the JuMP/Ipopt solver."""
 
 from __future__ import annotations
 
@@ -13,8 +9,13 @@ import time
 
 import numpy as np
 
-from direct_period import DirectPeriodOracle, DirectPeriodWorker, ROOT, case_identity
-from opf_networks import network_spec, nominal_equipment
+from ac_solver_session import (
+    DirectPeriodOracle,
+    DirectPeriodWorker,
+    ROOT,
+    case_identity,
+)
+from networks import network_spec, nominal_equipment
 
 
 class DirectPeriodBackend:

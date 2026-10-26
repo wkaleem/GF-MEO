@@ -12,7 +12,8 @@ model size (`small` or `base`) and seed (`0` or `1`), and run the cells in order
 The notebook includes the code and IEEE57 instance and downloads the model.
 Automatic setup requires Python 3.11 on Linux x86_64, internet access and `libgomp1`.
 
-This is a prototype implementation, and work is in progress.
+This is a prototype vibe-coded implementation under development in a personal capacity.
+For collaboration, contact [wzk5140@psu.edu](mailto:wzk5140@psu.edu).
 For questions, [open an issue](https://github.com/wkaleem/GF-MEO/issues).
 
 [License](LICENSE) · [Third-party licenses](THIRD_PARTY_NOTICES.md)

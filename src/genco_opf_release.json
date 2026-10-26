@@ -1,0 +1,511 @@
+{
+  "repository": "gridfm/genco-opf-datakit",
+  "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+  "records": [
+    {
+      "path": "case118_ieee/base/seed0/case118_ieee_base_seed0.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case118_ieee/base/seed0/case118_ieee_base_seed0.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "8f9c091e8872135570cf141a4035028e6befb33eeb7a833806c118831ce0affe",
+      "bytes": 899
+    },
+    {
+      "path": "case118_ieee/base/seed0/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case118_ieee/base/seed0/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "c2934420b6f2e56b97ddda900d547bbd80f9b6dabd1f526c056a65dc4f770758",
+      "bytes": 80387085
+    },
+    {
+      "path": "case118_ieee/base/seed0/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case118_ieee/base/seed0/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "f6583ab4b2d3e8ab41b1dcda003926c5f89eec7f313f6c6df6aed8e999d10055",
+      "bytes": 2162
+    },
+    {
+      "path": "case118_ieee/base/seed1/case118_ieee_base_seed1.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case118_ieee/base/seed1/case118_ieee_base_seed1.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "742ca609c3649dd401bb1cc16fbc81c5c58b0be1eda33ad02974ba015cf5d5b4",
+      "bytes": 899
+    },
+    {
+      "path": "case118_ieee/base/seed1/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case118_ieee/base/seed1/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "bb08cda8f85431acb340202f1b270e0cfa246245412502e55f2bdcb682bb317a",
+      "bytes": 80387085
+    },
+    {
+      "path": "case118_ieee/base/seed1/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case118_ieee/base/seed1/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "62fd795902f625ac7f523cd349009a6e627945e571e9734310b3f99cee6bd634",
+      "bytes": 2162
+    },
+    {
+      "path": "case118_ieee/small/seed0/case118_ieee_small_seed0.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case118_ieee/small/seed0/case118_ieee_small_seed0.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "8075f404cf9ce6991471beb09e9db11086072115d833aa8d82611cfbbcdce0a0",
+      "bytes": 899
+    },
+    {
+      "path": "case118_ieee/small/seed0/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case118_ieee/small/seed0/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "4ac9c2831abc1899c23cdc83f9ba9dbd4ffdddef902002f8ffd72866fc864493",
+      "bytes": 20297997
+    },
+    {
+      "path": "case118_ieee/small/seed0/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case118_ieee/small/seed0/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "f6583ab4b2d3e8ab41b1dcda003926c5f89eec7f313f6c6df6aed8e999d10055",
+      "bytes": 2162
+    },
+    {
+      "path": "case118_ieee/small/seed1/case118_ieee_small_seed1.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case118_ieee/small/seed1/case118_ieee_small_seed1.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "ebf55af01099dc83da0af1de8b23a29e927a3f814b748a129667e6f003df7b30",
+      "bytes": 899
+    },
+    {
+      "path": "case118_ieee/small/seed1/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case118_ieee/small/seed1/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "13792c0654a5bcfd40a6a7d8f859d521510f4a6976ed79698c0d6fb6fc053b8d",
+      "bytes": 20297997
+    },
+    {
+      "path": "case118_ieee/small/seed1/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case118_ieee/small/seed1/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "62fd795902f625ac7f523cd349009a6e627945e571e9734310b3f99cee6bd634",
+      "bytes": 2162
+    },
+    {
+      "path": "case14_ieee/base/seed0/case14_ieee_base_seed0.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case14_ieee/base/seed0/case14_ieee_base_seed0.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "208370f05f1c4b92bff4a2c1447bcacc37b29dfb305ffb0a0cc53757b4c3a15a",
+      "bytes": 898
+    },
+    {
+      "path": "case14_ieee/base/seed0/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case14_ieee/base/seed0/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "7abcd71813671f1c556a48aa4bc5f75d6fe9536a61aca188c846284982e5e5bc",
+      "bytes": 80387085
+    },
+    {
+      "path": "case14_ieee/base/seed0/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case14_ieee/base/seed0/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "db26cdd7dc85811cf8812b3b75f73b0e0fdf81b3412e287d8d5e147bcf52cbf5",
+      "bytes": 2162
+    },
+    {
+      "path": "case14_ieee/base/seed1/case14_ieee_base_seed1.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case14_ieee/base/seed1/case14_ieee_base_seed1.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "6e8aeed7af746271703df6ba5e221ca5a6bb15399244858c00cba97280469401",
+      "bytes": 898
+    },
+    {
+      "path": "case14_ieee/base/seed1/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case14_ieee/base/seed1/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "d1e88f71c833d1558cd8cc0b8087cb6fd1f9a2c646d4bbc49494e1ab6c520928",
+      "bytes": 80387085
+    },
+    {
+      "path": "case14_ieee/base/seed1/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case14_ieee/base/seed1/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "b6e427fa07f7f5678a45bc220547921efcf7a35367ab335d284023542732e32a",
+      "bytes": 2162
+    },
+    {
+      "path": "case14_ieee/small/seed0/case14_ieee_small_seed0.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case14_ieee/small/seed0/case14_ieee_small_seed0.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "9bba6ea9070e992edcd981d03e4219b09f3da3c95166cb4a07814151a42d3522",
+      "bytes": 898
+    },
+    {
+      "path": "case14_ieee/small/seed0/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case14_ieee/small/seed0/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "04536408ba20f481e5cb07bc47abb370e4147a8bc4672d444a3f49427d72ccfd",
+      "bytes": 20297997
+    },
+    {
+      "path": "case14_ieee/small/seed0/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case14_ieee/small/seed0/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "db26cdd7dc85811cf8812b3b75f73b0e0fdf81b3412e287d8d5e147bcf52cbf5",
+      "bytes": 2162
+    },
+    {
+      "path": "case14_ieee/small/seed1/case14_ieee_small_seed1.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case14_ieee/small/seed1/case14_ieee_small_seed1.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "bd2f56a101d1c2cb1eafccb7622f6756f042670c879a2dfa3a633fce0be50e9b",
+      "bytes": 898
+    },
+    {
+      "path": "case14_ieee/small/seed1/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case14_ieee/small/seed1/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "dbeee7dd82bbffefcbc5acdc4e228b608e1ebb4d65981ff8e67adefd9d121e7c",
+      "bytes": 20297997
+    },
+    {
+      "path": "case14_ieee/small/seed1/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case14_ieee/small/seed1/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "b6e427fa07f7f5678a45bc220547921efcf7a35367ab335d284023542732e32a",
+      "bytes": 2162
+    },
+    {
+      "path": "case2000_goc/base/seed0/best_model_state_dict.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case2000_goc/base/seed0/best_model_state_dict.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "158520c976c5a97dbf251cfbd21c985982b3d3cb0e11bbbe96112214bc981343",
+      "bytes": 80426579
+    },
+    {
+      "path": "case2000_goc/base/seed0/case2000_goc_base_seed0.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case2000_goc/base/seed0/case2000_goc_base_seed0.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "c32a04eb585d9e6da20198fe1029ef6b5dd6547b84868ce9c56868171f58e7b5",
+      "bytes": 900
+    },
+    {
+      "path": "case2000_goc/base/seed0/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case2000_goc/base/seed0/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "cae4811c5c35c56954d7eb668976041cda0222634dee5cefa323398e24e52ce9",
+      "bytes": 2162
+    },
+    {
+      "path": "case2000_goc/base/seed1/case2000_goc_base_seed1.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case2000_goc/base/seed1/case2000_goc_base_seed1.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "5f62502058c3d3fd577ce5aedad16b78d5be5709d70b619aeb6eed74fdddf2a7",
+      "bytes": 900
+    },
+    {
+      "path": "case2000_goc/base/seed1/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case2000_goc/base/seed1/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "f8ec2a64478d171ef8e9c70a668f407d9f1d65f5525be2792f9030dd0618562d",
+      "bytes": 80387085
+    },
+    {
+      "path": "case2000_goc/base/seed1/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case2000_goc/base/seed1/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "804d690264fa80ca8684f7eb7009abe4b9c43639cf7ef1bbe3997f49e80e5409",
+      "bytes": 2162
+    },
+    {
+      "path": "case2000_goc/small/seed0/best_model_state_dict.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case2000_goc/small/seed0/best_model_state_dict.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "3395c2415aa6351b0be3b0c273009e1b404a54353e261b9184962127e2e32a30",
+      "bytes": 20336211
+    },
+    {
+      "path": "case2000_goc/small/seed0/case2000_goc_small_seed0.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case2000_goc/small/seed0/case2000_goc_small_seed0.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "ef6759e237cf00a447ca263971c7b043df7d3f3ea8bf0298e581c52d394fe00a",
+      "bytes": 900
+    },
+    {
+      "path": "case2000_goc/small/seed0/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case2000_goc/small/seed0/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "cae4811c5c35c56954d7eb668976041cda0222634dee5cefa323398e24e52ce9",
+      "bytes": 2162
+    },
+    {
+      "path": "case2000_goc/small/seed1/case2000_goc_small_seed1.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case2000_goc/small/seed1/case2000_goc_small_seed1.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "6814deb47215c6070d0a420a2ce7016d6a04464599a4f2dc2636b5e4619e1817",
+      "bytes": 900
+    },
+    {
+      "path": "case2000_goc/small/seed1/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case2000_goc/small/seed1/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "4937e106e097211594f99d36f9e8285903267769f7d77e944f64f854963f6a0e",
+      "bytes": 20297997
+    },
+    {
+      "path": "case2000_goc/small/seed1/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case2000_goc/small/seed1/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "804d690264fa80ca8684f7eb7009abe4b9c43639cf7ef1bbe3997f49e80e5409",
+      "bytes": 2162
+    },
+    {
+      "path": "case30_ieee/base/seed0/case30_ieee_base_seed0.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case30_ieee/base/seed0/case30_ieee_base_seed0.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "b4609eee528a5f4f3510594fbb0ee4d113c03b69e3e1bc7fff85332645fadd80",
+      "bytes": 898
+    },
+    {
+      "path": "case30_ieee/base/seed0/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case30_ieee/base/seed0/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "5bd5683d4ac03b88f0548ce18161379fcc1bebe98c61e7aa8e20a9641ba9f7aa",
+      "bytes": 80387085
+    },
+    {
+      "path": "case30_ieee/base/seed0/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case30_ieee/base/seed0/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "1fdf46d4da86484df87db53f3e0a6a11ac851e66f79a8b2bdc210906e761ae39",
+      "bytes": 2162
+    },
+    {
+      "path": "case30_ieee/base/seed1/case30_ieee_base_seed1.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case30_ieee/base/seed1/case30_ieee_base_seed1.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "dfcd6a845edff18c2a05004897c9c8956c87e45203b36a71399e34bf3a0fd09b",
+      "bytes": 898
+    },
+    {
+      "path": "case30_ieee/base/seed1/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case30_ieee/base/seed1/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "c0cde28773d0edb168748ffc03fa43e84af14119c88eebb42225c84f66fd587c",
+      "bytes": 80387085
+    },
+    {
+      "path": "case30_ieee/base/seed1/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case30_ieee/base/seed1/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "bc1a34e95061561dafaa58d73986358865dd5f7cdea9115d6706f67bc11d579b",
+      "bytes": 2162
+    },
+    {
+      "path": "case30_ieee/small/seed0/case30_ieee_small_seed0.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case30_ieee/small/seed0/case30_ieee_small_seed0.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "029c68d331349d1946e24900ec6f0c22eea8dc90d0aba847a29ead378e17f98e",
+      "bytes": 898
+    },
+    {
+      "path": "case30_ieee/small/seed0/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case30_ieee/small/seed0/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "3c820cb16c9838a39bbeb5a951ca8dd9e3603f3db6578f2fa9af8a68bca17adc",
+      "bytes": 20297997
+    },
+    {
+      "path": "case30_ieee/small/seed0/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case30_ieee/small/seed0/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "1fdf46d4da86484df87db53f3e0a6a11ac851e66f79a8b2bdc210906e761ae39",
+      "bytes": 2162
+    },
+    {
+      "path": "case30_ieee/small/seed1/case30_ieee_small_seed1.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case30_ieee/small/seed1/case30_ieee_small_seed1.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "7972a8400b1930b94c59e968dff95754e831302c4fc16e23e52c86e3dec7e1f1",
+      "bytes": 898
+    },
+    {
+      "path": "case30_ieee/small/seed1/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case30_ieee/small/seed1/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "b09d1e6690af8b72316781165eb34035c7edfa772bec6e6cef46f21fa548ded3",
+      "bytes": 20297997
+    },
+    {
+      "path": "case30_ieee/small/seed1/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case30_ieee/small/seed1/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "bc1a34e95061561dafaa58d73986358865dd5f7cdea9115d6706f67bc11d579b",
+      "bytes": 2162
+    },
+    {
+      "path": "case500_goc/base/seed0/case500_goc_base_seed0.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case500_goc/base/seed0/case500_goc_base_seed0.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "72f98766f81862e6022ee241bfb62e6a6892d9520acaf947e229830206dfb50b",
+      "bytes": 899
+    },
+    {
+      "path": "case500_goc/base/seed0/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case500_goc/base/seed0/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "8351f3a7ff8ccc149a377b29b2e3bd540d793f6c2cb660dd5660992e6a58a582",
+      "bytes": 80387085
+    },
+    {
+      "path": "case500_goc/base/seed0/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case500_goc/base/seed0/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "d005c43bec028abdc41cc3a76c0afe86624f4ec5acb571756f4ea854e80f2ebd",
+      "bytes": 2162
+    },
+    {
+      "path": "case500_goc/base/seed1/case500_goc_base_seed1.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case500_goc/base/seed1/case500_goc_base_seed1.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "183704bb9a6095b962f3a0ca9ca4a69a24844aaa6b091585790c5eaf99d0e66f",
+      "bytes": 899
+    },
+    {
+      "path": "case500_goc/base/seed1/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case500_goc/base/seed1/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "51ed51f35e9e9effdb1c6f88e29da5624a3cd441413d3c1453b387f248543ff0",
+      "bytes": 80387085
+    },
+    {
+      "path": "case500_goc/base/seed1/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case500_goc/base/seed1/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "2e899f4769d651c9feb2e8642f8f20d96cc53230144d876f0283b08ca55a0c4a",
+      "bytes": 2162
+    },
+    {
+      "path": "case500_goc/small/seed0/case500_goc_small_seed0.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case500_goc/small/seed0/case500_goc_small_seed0.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "4a10569247b68f950f6628ad3875df789d9f6c21fbaa977358e9ad565b5a31b1",
+      "bytes": 899
+    },
+    {
+      "path": "case500_goc/small/seed0/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case500_goc/small/seed0/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "517b1593b780103e5f6013b3a0cbeeeac6293c4d1c006edd29cbfaf0b3b2b981",
+      "bytes": 20297997
+    },
+    {
+      "path": "case500_goc/small/seed0/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case500_goc/small/seed0/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "d005c43bec028abdc41cc3a76c0afe86624f4ec5acb571756f4ea854e80f2ebd",
+      "bytes": 2162
+    },
+    {
+      "path": "case500_goc/small/seed1/case500_goc_small_seed1.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case500_goc/small/seed1/case500_goc_small_seed1.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "e5bc32cfbf9d78ecda05cbbbf1c543224b8f3ebd254cb16562207d592ada88f9",
+      "bytes": 899
+    },
+    {
+      "path": "case500_goc/small/seed1/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case500_goc/small/seed1/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "55f94d0d19fb1d5b7fdf9996d7151b1a10d52c4b79bb6b0031537d7dcadabda5",
+      "bytes": 20297997
+    },
+    {
+      "path": "case500_goc/small/seed1/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case500_goc/small/seed1/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "2e899f4769d651c9feb2e8642f8f20d96cc53230144d876f0283b08ca55a0c4a",
+      "bytes": 2162
+    },
+    {
+      "path": "case57_ieee/base/seed0/case57_ieee_base_seed0.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case57_ieee/base/seed0/case57_ieee_base_seed0.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "6e4ed080bbe0e92b48e1ccbeee8ddd7d591c9f8483f3763aa91ebfc248562cb0",
+      "bytes": 898
+    },
+    {
+      "path": "case57_ieee/base/seed0/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case57_ieee/base/seed0/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "d0fb93bc825cf656e6e5b987e40012910e3d47d808cd8977a37a7f71bf5d2677",
+      "bytes": 80387085
+    },
+    {
+      "path": "case57_ieee/base/seed0/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case57_ieee/base/seed0/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "b2695461a935628ef7863679e91c509b6d35fb6aeef0d3442cf27089aac963c6",
+      "bytes": 2162
+    },
+    {
+      "path": "case57_ieee/base/seed1/case57_ieee_base_seed1.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case57_ieee/base/seed1/case57_ieee_base_seed1.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "8f7407c170e99fa24d044af308d38b0778bcbd16b94eafba007a0ff9b48aa1cb",
+      "bytes": 898
+    },
+    {
+      "path": "case57_ieee/base/seed1/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case57_ieee/base/seed1/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "62c13000cd7121b4ef5cb5e01b0b3c77cf75d248f87a24f7606c7a3bd11c074b",
+      "bytes": 80387085
+    },
+    {
+      "path": "case57_ieee/base/seed1/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case57_ieee/base/seed1/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "0582a2f2c1666ed9b8e8ba3e2729541ddcbb8633bc3b84a3d390fca99a14b43c",
+      "bytes": 2162
+    },
+    {
+      "path": "case57_ieee/small/seed0/case57_ieee_small_seed0.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case57_ieee/small/seed0/case57_ieee_small_seed0.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "a07f1bf25bf17027c582992cc85a514c99040ffe3c85e36f24e02a56f0182610",
+      "bytes": 898
+    },
+    {
+      "path": "case57_ieee/small/seed0/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case57_ieee/small/seed0/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "d6d696e7510a3d2ff261765c008ca3adef7befb492e09a84142ce64d0b1c2071",
+      "bytes": 20297997
+    },
+    {
+      "path": "case57_ieee/small/seed0/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case57_ieee/small/seed0/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "b2695461a935628ef7863679e91c509b6d35fb6aeef0d3442cf27089aac963c6",
+      "bytes": 2162
+    },
+    {
+      "path": "case57_ieee/small/seed1/case57_ieee_small_seed1.yaml",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case57_ieee/small/seed1/case57_ieee_small_seed1.yaml",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "1fda29fd9030f5313528b0c2a3d13df9518c0b83fe02567e56e9726dbd6aa68e",
+      "bytes": 898
+    },
+    {
+      "path": "case57_ieee/small/seed1/last.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case57_ieee/small/seed1/last.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "53f1d3e3ccd9763f1f3b7f3ae3faf75ad657fa0eb7aedbd2853d62012b1d0119",
+      "bytes": 20297997
+    },
+    {
+      "path": "case57_ieee/small/seed1/normalizer_stats.pt",
+      "url": "https://huggingface.co/gridfm/genco-opf-datakit/resolve/2d2401572f6a2d0c1be79841b2def99cf45e1639/case57_ieee/small/seed1/normalizer_stats.pt",
+      "revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+      "sha256": "0582a2f2c1666ed9b8e8ba3e2729541ddcbb8633bc3b84a3d390fca99a14b43c",
+      "bytes": 2162
+    }
+  ],
+  "failures": []
+}

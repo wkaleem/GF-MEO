@@ -218,3 +218,22 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Demo artifacts
+.venv/
+.downloads/
+.cache/
+__pycache__/
+*.pyc
+models/
+vendor/
+sources/
+runs/
+latest_run.json
+setup.log
+notebook_solve.log
+gfmo_demo/
+.ipynb_checkpoints/
+
+.progress_*.json
+*.svg

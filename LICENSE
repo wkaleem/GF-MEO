@@ -1,0 +1,31 @@
+GFMO Research Evaluation License, version 1.0
+Copyright (c) 2026 Waquar Kaleem. All rights reserved.
+
+This license applies only to original GFMO code, notebooks and documentation
+authored for this repository. Third-party software, datasets, network cases
+and trained models retain their own licenses; see THIRD_PARTY_NOTICES.md.
+
+Permission is granted to individuals and organizations to download, execute,
+and privately modify the original GFMO materials solely for noncommercial
+evaluation and reproduction of the results described in this repository.
+Reasonable local copies and backups needed for that purpose are permitted.
+Published evaluations may report their findings and cite this repository.
+
+Without prior written permission from the copyright holder, this license
+does not permit redistribution of the original GFMO materials or modified
+versions, incorporation into other projects or products, commercial use,
+deployment as a service, sublicensing, or removal of copyright notices.
+GitHub viewing and forking rights required by GitHub's Terms of Service are
+not restricted by this license. No additional redistribution rights are
+granted through such a fork. No patent or trademark license is granted.
+
+This is an evaluation-only, source-available release, not an open-source
+license. It does not claim exclusive rights over scientific ideas, methods,
+facts, independently developed implementations, or third-party materials.
+
+THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+AND NONINFRINGEMENT. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW,
+THE COPYRIGHT HOLDER IS NOT LIABLE FOR CLAIMS OR DAMAGES ARISING FROM USE.
+
+Other permissions: wzk5140@psu.edu

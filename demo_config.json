@@ -1,0 +1,27 @@
+{
+  "case": "data/ieee57_uc.json",
+  "model_size": "base",
+  "training_seed": 0,
+  "model_device": "cpu",
+  "output": "runs/demo/solver.json",
+  "period_model": "corrected",
+  "optimize_linear_costs": true,
+  "seconds": 300.0,
+  "rho": "economic_gradient_scale",
+  "penalty_update": {
+    "factor": 2.0,
+    "contraction": 0.8,
+    "maximum_multiple": 4096.0
+  },
+  "radius": 0.2,
+  "iterations": null,
+  "initialization_seconds": 300.0,
+  "initialization_starts": 3,
+  "period_seconds": 300.0,
+  "maxiter": 20,
+  "horizon_seconds": 300.0,
+  "completion_seconds": 300.0,
+  "consensus_tolerance": 1e-05,
+  "step_tolerance": 1e-05,
+  "seed": 19
+}

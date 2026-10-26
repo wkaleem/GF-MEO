@@ -1,0 +1,10 @@
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(\.venv|vendor|gfmo_demo|\.downloads|\.cache)/
+'''
+
+[tool.pytest.ini_options]
+testpaths = ['tests']

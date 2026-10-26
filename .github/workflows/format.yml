@@ -1,0 +1,14 @@
+name: Python formatting
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  black:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install black==26.1.0
+      - run: black --check src setup_demo.py run_demo.py demo_view.py tests

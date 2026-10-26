@@ -67,7 +67,7 @@ def checkpoint_files(network, model_size, training_seed, checkpoint_root=None):
         or training_seed not in (0, 1)
     ):
         raise ValueError("Unknown released OPF network, model size or training seed")
-    inventory = json.loads(Path(__file__).with_name("genco_models.json").read_text())
+    inventory = json.loads((ROOT / "config/genco_models.json").read_text())
     if (
         inventory["repository"] != "gridfm/genco-opf-datakit"
         or inventory["revision"] != "2d2401572f6a2d0c1be79841b2def99cf45e1639"

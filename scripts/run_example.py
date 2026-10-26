@@ -11,7 +11,7 @@ import sys
 import time
 import uuid
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def run_example(size="base", seed=0, seconds=300):
@@ -29,7 +29,7 @@ def run_example(size="base", seed=0, seconds=300):
         )
     )
     folder.mkdir(parents=True)
-    config = json.loads((ROOT / "parameters.json").read_text())
+    config = json.loads((ROOT / "config/parameters.json").read_text())
     config.update(
         model_size=size,
         training_seed=seed,

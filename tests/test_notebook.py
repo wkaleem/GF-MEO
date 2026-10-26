@@ -17,7 +17,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def module(name):
-    spec = importlib.util.spec_from_file_location(name, ROOT / (name + ".py"))
+    spec = importlib.util.spec_from_file_location(
+        name, ROOT / "scripts" / (name + ".py")
+    )
     result = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(result)
     return result
@@ -151,12 +153,12 @@ def test_prepare_matches_size_seed_and_rejects_modified_source(
         return raw
 
     monkeypatch.setattr(setup, "download", download)
-    (tmp_path / "src").mkdir()
+    (tmp_path / "config").mkdir()
     records = [
         dict(path=f"case57_ieee/base/seed0/{name}")
         for name in ["config.yml", "last.pt", "normalizer_stats.pt"]
     ]
-    inventory = tmp_path / "src/genco_models.json"
+    inventory = tmp_path / "config/genco_models.json"
     inventory.write_text(json.dumps(dict(records=records)))
     setup.prepare()
     setup.prepare()
@@ -188,7 +190,10 @@ def test_invalid_checkpoint_selection(setup, size, seed):
 def runner(tmp_path, monkeypatch):
     value = module("run_example")
     monkeypatch.setattr(value, "ROOT", tmp_path)
-    (tmp_path / "parameters.json").write_text((ROOT / "parameters.json").read_text())
+    (tmp_path / "config").mkdir()
+    (tmp_path / "config/parameters.json").write_text(
+        (ROOT / "config/parameters.json").read_text()
+    )
     (tmp_path / "data").mkdir()
     (tmp_path / "data/ieee57_uc.json").write_text("{}")
     monkeypatch.setenv("GFMO_DEMO_PROGRESS_FILE", str(tmp_path / "progress.json"))
@@ -305,7 +310,7 @@ def test_invalid_run_arguments(runner, args):
 def test_command_line_rejects_invalid_inputs_before_work(script, args, monkeypatch):
     monkeypatch.setattr(sys, "argv", [script] + args)
     with pytest.raises(ValueError if script == "run_example.py" else SystemExit):
-        runpy.run_path(str(ROOT / script), run_name="__main__")
+        runpy.run_path(str(ROOT / "scripts" / script), run_name="__main__")
 
 
 def test_command_line_without_notebook_marker(runner, monkeypatch):
@@ -349,4 +354,4 @@ def test_result_plots_require_a_solution_and_show_real_report_data(
     ]:
         assert text in svg
     monkeypatch.setattr(sys, "argv", ["plot_results.py", str(report), str(destination)])
-    runpy.run_path(str(ROOT / "plot_results.py"), run_name="__main__")
+    runpy.run_path(str(ROOT / "scripts/plot_results.py"), run_name="__main__")

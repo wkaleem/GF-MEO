@@ -527,7 +527,6 @@ def _run(config, *, started, resources):
                 "ac_constraints.py",
                 "ac_derivatives.py",
                 "input_domain.py",
-                "genco_models.json",
                 "networks.py",
                 "feasibility.py",
                 "reactive_generation.py",
@@ -542,6 +541,7 @@ def _run(config, *, started, resources):
                 "ac_solver_session.py",
             )
         ]
+        artifacts.append(root / "config/genco_models.json")
     report["artifacts"] = {
         str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
         for p in artifacts

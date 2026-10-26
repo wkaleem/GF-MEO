@@ -25,7 +25,7 @@ relicense or restrict the following dependencies, models or data.
   case is an adapted operating scenario and UC extension, not an unmodified
   PGLib benchmark. No endorsement by the original authors is implied.
 
-The [Apache-2.0 license text](LICENSES/Apache-2.0.txt) is bundled with this
+The [Apache-2.0 license text](Apache-2.0.txt) is bundled with this
 release. The underlying data attribution uses
 [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/).
 

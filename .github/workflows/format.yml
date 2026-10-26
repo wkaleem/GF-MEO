@@ -11,4 +11,4 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install black==26.1.0
-      - run: black --check src setup_environment.py run_example.py plot_results.py tests
+      - run: black --check src scripts tests

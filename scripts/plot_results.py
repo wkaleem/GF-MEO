@@ -11,7 +11,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from feasibility import check
 
 
@@ -35,7 +35,7 @@ def render(report_path, destination):
     best = report.get("best")
     if best is None:
         return False
-    root = Path(__file__).resolve().parent
+    root = Path(__file__).resolve().parents[1]
     case = json.loads((root / report["configuration"]["case"]).read_text())
     history = report["accepted_history"]
     fig, axes = plt.subplots(1, 3, figsize=(12, 3.5), layout="constrained")

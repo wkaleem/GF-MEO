@@ -17,3 +17,15 @@ For collaboration, contact [wzk5140@psu.edu](mailto:wzk5140@psu.edu).
 For questions, [open an issue](https://github.com/wkaleem/GF-MEO/issues).
 
 [License](LICENSE) · [Third-party licenses](THIRD_PARTY_NOTICES.md)
+
+## References
+
+1. W. Zhang, Y. Kim, and K. Kim. [On Solving Unit Commitment with Alternating Current Optimal Power Flow on GPU](https://arxiv.org/abs/2310.13145v1), 2023.
+2. D. A. Tejada-Arango et al. [Unit Commitment with ACOPF Constraints: Practical Experience with Solution Techniques](https://doi.org/10.1109/PTC.2019.8810928). IEEE Milan PowerTech, 2019.
+3. G. E. Constante-Flores, A. J. Conejo, and F. Qiu. [AC Network-Constrained Unit Commitment via Relaxation and Decomposition](https://doi.org/10.1109/TPWRS.2021.3120180). IEEE Transactions on Power Systems, 2022.
+4. GridFM. [GENCO OPF models](https://huggingface.co/gridfm/genco-opf-datakit) and [Graphkit implementation](https://github.com/gridfm/gridfm-graphkit).
+5. A. Puech et al. [GENCO — A Unified Neural Solver Embedded in a Development Framework for Steady-State Grid Analysis](https://arxiv.org/abs/2608.09921v2), 2026.
+6. S. Zeng et al. [Scalable Mixed-Integer Optimization with Neural Constraints via Dual Decomposition](https://doi.org/10.1609/aaai.v40i17.38454). AAAI, 2026.
+7. A. Iftakher et al. [Physics-Informed Neural Networks with Hard Nonlinear Equality and Inequality Constraints](https://doi.org/10.1016/j.compchemeng.2025.109418). Computers & Chemical Engineering, 2026.
+8. J. Nocedal and S. J. Wright. [Numerical Optimization](https://doi.org/10.1007/978-0-387-40065-5). Springer, 2006.
+9. O. Kröger et al. [Juniper: An Open-Source Nonlinear Branch-and-Bound Solver in Julia](https://doi.org/10.1007/978-3-319-93031-2_27), 2018.

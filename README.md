@@ -1,6 +1,5 @@
-# GF-MEO
 
-**GFMO: Grid Foundation Model–Embedded Optimization for AC-Feasible Unit Commitment**
+## GFMO: Grid Foundation Model–Embedded Optimization for AC-Feasible Unit Commitment
 
 This project aims to find multiperiod unit commitment decisions that satisfy
 AC power flow equations and operating limits. We embed the grid foundation
